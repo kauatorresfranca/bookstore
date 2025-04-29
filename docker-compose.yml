@@ -12,6 +12,7 @@ services:
       - backend
     depends_on:
       - db
+
   db:
     image: postgres:13.0-alpine
     volumes:
