@@ -43,7 +43,7 @@ jobs:
 
       - name: Install dependencies
         shell: bash
-        run: poetry install
+        run: poetry install --no-root
 
       # Start Docker Compose and run tests within the container
       - name: Start Docker Compose services
