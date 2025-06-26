@@ -80,7 +80,7 @@ DATABASES = {
     "default": dj_database_url.config(
         default="sqlite:///" + str(BASE_DIR / "db.sqlite3"),
         conn_max_age=600,
-        ssl_require=os.environ.get("DJANGO_ENV") == "production"
+        ssl_require=True  # Força SSL para Fly.io, já que usa pgbouncer
     )
 }
 
@@ -108,7 +108,6 @@ USE_L10N = True
 USE_TZ = True
 
 # Static files
-# Configurações de arquivos estáticos
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STORAGES = {
