@@ -82,7 +82,7 @@ WSGI_APPLICATION = "bookStore.wsgi.application"
 # Database
 DATABASES = {
     "default": dj_database_url.config(
-        default="sqlite:///" + str(BASE_DIR / "db.sqlite3"),
+        default="postgres://bookstore_dev:bookstore_dev@localhost:5432/bookstore_dev_db",
         conn_max_age=600,
         ssl_require=os.environ.get("DJANGO_ENV", "development") == "production"
     )
